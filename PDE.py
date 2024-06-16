@@ -89,11 +89,14 @@ class Projectile2D(PhysicsModel):
         
         return t_meas, x_meas
     
-    def show_measure(self, xs, show=True):
-        sns.kdeplot(xs, label='Distrubution of Measured X Positions')
+    def show_measure(self, xs):
+        sns.kdeplot(xs, linewidth=2.5, label='Distrubution of Measured X Positions')
         plt.xlim([-0.2, 5.2])
-        if show:
-            self.show()
+        plt.grid()
+        plt.legend()
+        plt.xlabel("X [m]")
+        plt.ylabel("Density")
+        plt.show()
 
     def show_simulate(self, u0, 
                       data=np.array([]),
