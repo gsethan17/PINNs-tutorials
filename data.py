@@ -39,7 +39,7 @@ class DataLoader(object):
         ts = np.array(ts).reshape((size, 1))
         xs = np.array(xs).reshape((size, 1))
         
-        return ts, xs
+        return tf.convert_to_tensor(ts, dtype=tf.float32), tf.convert_to_tensor(xs, dtype=tf.float32)
         
 if __name__ == "__main__":
     from PDE import Projectile2D
